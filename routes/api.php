@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Resources\CategoriesResource;
+use App\Models\Categories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,20 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//** Categories */
+
+//Get all categories
+Route::get('/categories', function() {
+$categories = Categories::all();
+return CategoriesResource::collection($categories);
+});
+
+//Add a new category
+
+
+//Update category
+
+
+//Delete category
+

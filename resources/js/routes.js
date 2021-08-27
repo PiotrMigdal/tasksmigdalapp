@@ -1,11 +1,11 @@
 import VueRouter from 'vue-router';
-import ExampleComponent from './components/ExampleComponent';
+import Portfolio from './portfolio/Portfolio';
 
 
 const routes = [
   {
     path: "/",
-    component: ExampleComponent,
+    component: Portfolio,
     name: 'home'
   }
 ];
