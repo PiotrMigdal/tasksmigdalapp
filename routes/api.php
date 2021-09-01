@@ -24,9 +24,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //Get all categories
 Route::get('/categories', function() {
-$categories = Categories::all();
-return CategoriesResource::collection($categories);
+return CategoriesResource::collection(Categories::all());
 });
+
+//Get category id
+Route::get('/categories/{id}', function($catID) {
+  return Categories::findOrFail($catID);
+  });
+
 
 //Add a new category
 
